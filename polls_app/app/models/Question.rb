@@ -12,8 +12,12 @@ class Question < ApplicationRecord
         through: :answer_choices,
         source: :responses
 
-    has_one :author,
-        through: :poll,
-        source: :author
+    def results
+        count = Hash.new{|h, k| h[k] = 0}
+
+        self.responses.each {|r| count[r.answer_choice.text] += 1  }
+
+        count
+    end
 
 end

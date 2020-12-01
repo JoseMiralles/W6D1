@@ -25,7 +25,7 @@ class Response < ApplicationRecord
     # Checks if the author is responding to their own poll.
     def author_cant_respond
         author_id = self.respondent.id
-        question_author_id = question.author.id
+        question_author_id = question.poll.author.id
         return author_id == question_author_id
     end
 
