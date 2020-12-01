@@ -1,3 +1,5 @@
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -30,22 +32,22 @@ questions = Question.create!([
     {text: "Which bear is best?", poll_id: polls[3].id}
 ])
 
-answer_choices = AnswerChoice.create([
-    {text: "Cat", questions[0].id},
-    {text: "Dog", questions[0].id},
-    {text: "under 60", questions[1].id},
-    {text: "60 and over", questions[1].id},
-    {text: "Russia", questions[2].id},
-    {text: "Ukraine", questions[2].id},
-    {text: "Black bear", questions[3].id},
-    {text: "Grizzlie bear", questions[3].id}
+answer_choices = AnswerChoice.create!([
+    {text: "Cat", question_id: questions[0].id},
+    {text: "Dog", question_id: questions[0].id},
+    {text: "under 60", question_id: questions[1].id},
+    {text: "60 and over", question_id: questions[1].id},
+    {text: "Russia", question_id: questions[2].id},
+    {text: "Ukraine", question_id: questions[2].id},
+    {text: "Black bear", question_id: questions[3].id},
+    {text: "Grizzlie bear", question_id: questions[3].id}
 ])
 
-responses = Response.create([
-    {user_id: user1.id, answer_choice_id: answer_choices[0]},
-    {user_id: user1.id, answer_choice_id: answer_choices[2]},
-    {user_id: user1.id, answer_choice_id: answer_choices[5]},
-    {user_id: user2.id, answer_choice_id: answer_choices[1]},
-    {user_id: user2.id, answer_choice_id: answer_choices[3]},
-    {user_id: user3.id, answer_choice_id: answer_choices[7]}
+responses = Response.create!([
+    {user_id: user1.id, answer_choice_id: answer_choices[0].id},
+    {user_id: user1.id, answer_choice_id: answer_choices[2].id},
+    {user_id: user1.id, answer_choice_id: answer_choices[5].id},
+    {user_id: user2.id, answer_choice_id: answer_choices[1].id},
+    {user_id: user2.id, answer_choice_id: answer_choices[3].id},
+    {user_id: user3.id, answer_choice_id: answer_choices[7].id}
 ])
