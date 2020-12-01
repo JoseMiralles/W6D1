@@ -15,7 +15,8 @@ class Question < ApplicationRecord
     def results
         count = Hash.new{|h, k| h[k] = 0}
 
-        self.responses.each {|r| count[r.answer_choice.text] += 1  }
+        acs = self.answer_choices.includes(:responses)
+        acs.each {|ac| count[ac.text] = ac.responses.length}
 
         count
     end
