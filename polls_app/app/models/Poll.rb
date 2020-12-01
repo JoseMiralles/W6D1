@@ -1,6 +1,6 @@
 class Poll < ApplicationRecord
 
-    belongs_to: creator,
+    belongs_to: author,
         foreign_key: :author_id,
         class_name: :User
 

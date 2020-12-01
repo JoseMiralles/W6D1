@@ -4,12 +4,8 @@ class Question < ApplicationRecord
         foreign_key: :poll_id,
         class_name: Poll
 
-    has_many: answers,
+    has_many: answer_choices,
         foreign_key: :question_id,
         class_name: :AnswerChoice
-
-    has_one: response,
-        foreign_key: :question_id,
-        class_name: :Response
 
 end
