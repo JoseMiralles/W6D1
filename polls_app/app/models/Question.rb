@@ -8,4 +8,8 @@ class Question < ApplicationRecord
         foreign_key: :question_id,
         class_name: :AnswerChoice
 
+    has_many :responses,
+        through: :answer_choices,
+        source: :responses
+
 end
