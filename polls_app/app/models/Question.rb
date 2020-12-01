@@ -12,4 +12,8 @@ class Question < ApplicationRecord
         through: :answer_choices,
         source: :responses
 
+    has_one :author,
+        through: :poll,
+        source: :author
+
 end
